@@ -32,20 +32,6 @@ export class UsersService {
     return { status: "success", message: "success!" };
   }
 
-  public async getStocks(user: any) {
-    const dal = new UsersDal();
-    const userStocks = await dal.getUserStocks(user);
-    // return { status: "success", message: "success!", data: userStocks };
-    return userStocks;
-  }
-
-  public async updateStocks(params: any) {
-    const dal = new UsersDal();
-    const status = await dal.updateUserStocks(params);
-    const userStocks = await dal.getUserStocks(params);
-    return { status: "success", message: "success!", data: userStocks };
-  }
-
   public async getUsers() {
     const dal = new UsersDal();
     const res = await dal.findAll();

@@ -23,23 +23,6 @@ export class UsersDal {
     return data?.password;
   }
 
-  public async getUserStocks(user: any) {
-    const data = await Users.findOne({
-      username: user.username,
-    });
-
-    return data?.stocks;
-  }
-
-  public async updateUserStocks(user: any) {
-    const data = await Users.findOneAndUpdate(
-      { username: user.username },
-      { $push: { stocks: user.stockToAdd } },
-      { new: true }
-    );
-    return data;
-  }
-
   public async checkUser(user: any) {
     const data = await Users.findOne({
       username: user.username,
