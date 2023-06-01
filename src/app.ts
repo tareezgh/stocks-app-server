@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(routes);
 
-const PORT = 3001;
+const PORT = 3002;
 
 connectDb().then(async () => {
   app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));

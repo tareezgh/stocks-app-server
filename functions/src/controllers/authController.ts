@@ -23,4 +23,26 @@ export class AuthController {
       return res.send(error);
     }
   }
+
+  public static async getStocks(req: Request, res: Response) {
+    try {
+      const params = req.body;
+      const service = new UsersService();
+      const stocks = await service.getStocks(params);
+      return res.status(200).send(stocks);
+    } catch (error) {
+      return res.send(error);
+    }
+  }
+
+  public static async updateStocks(req: Request, res: Response) {
+    try {
+      const params = req.body;
+      const service = new UsersService();
+      const stocks = await service.updateStocks(params);
+      return res.status(200).send(stocks);
+    } catch (error) {
+      return res.send(error);
+    }
+  }
 }
